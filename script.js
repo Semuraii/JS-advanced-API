@@ -50,7 +50,7 @@ function displayPokemon(pokemon){
     <p><strong>ID:</strong> ${pokemon.id}</p>
     <p><strong>Height:</strong> ${pokemon.height}</p>
     <p><strong>Weight:</strong> ${pokemon.weight}</p>
-    <p><strong>Types:</strong> ${pokemon.types}</p>
+    <p><strong>Types:</strong> ${types}</p>
     `;
 }
 
