@@ -48,6 +48,11 @@ button {
     transition: 0.3s;
 }
 
+button:hover {
+    background: #1c4f80;
+    transform: translateY(-2px);
+}
+
 #pokemonContainer {
     margin: 30px auto;
     width: 300px;
