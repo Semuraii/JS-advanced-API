@@ -101,3 +101,7 @@ button:hover {
     width: 120px;
     transition: 0.3s;
 }
+
+.card:hover img {
+    transform: scale(1.1);
+}
