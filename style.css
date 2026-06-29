@@ -67,6 +67,10 @@ button:hover {
     transition: transform 0.3s;
 }
 
+#pokemonContainer img:hover {
+    transform: scale(1.15);
+}
+
 #pokemonList {
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
