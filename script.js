@@ -55,13 +55,15 @@ function displayPokemon(pokemon){
 }
 
 // Load first 151 Pokemon
-async function loadPokemon(){
+async function loadPokemon() {
     const response = await fetch(`${BASE_URL}/pokemon?limit=151`);
     const data = await response.json();
     pokemonList.innerHTML="";
-    data.results.forEach(async pokemon=>{
+    
+    data.results.forEach(async pokemon=> {
         const response = await fetch(pokemon.url);
         const details = await response.json();
+        
         pokemonList.innerHTML += `
         <div class="card" onclick="getPokemon('${details.name}')">
         <img src="${details.sprites.front_default}">
