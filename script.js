@@ -15,8 +15,8 @@ searchBtn.addEventListener("click", () => {
 });
 
 //Press Enter
-searchInput.addEventListener("kreypress",(event)=>{
-    if(event.key==="Enter"){
+searchInput.addEventListener("keydown",(event)=>{
+    if(event.key === "Enter"){
         searchBtn.click();
     }
 });
