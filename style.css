@@ -18,7 +18,10 @@ h2 {
 }
 
 .search {
-    margin: 30px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 input {
