@@ -46,5 +46,6 @@ function displayPokemon(pokemon){
 
     pokemonContainer.innerHTML = `
     <h2>${pokemon.name.toUpperCase()}</h2>
+    <img src="${pokemon.sprites.front_default}">
     `
 }
