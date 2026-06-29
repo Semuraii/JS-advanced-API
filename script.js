@@ -5,10 +5,18 @@ const searchInput = document.getElementById("searchInput");
 
 const BASE_URL = "https://pokeapi.co/api/v2";
 
+// Search button
 searchBtn.addEventListener("click", () => {
     const pokemon = searchInput.value.toLowerCase().trim();
 
     if(pokemon !==""){
         getPokemon(pokemon);
+    }
+});
+
+//Press Enter
+searchInput.addEventListener("kreypress",(event)=>{
+    if(event.key==="Enter"){
+        searchBtn.click();
     }
 });
