@@ -37,3 +37,10 @@ async function getPokemon(name){
         `;
     } 
 }
+
+// Display selected Pokemon
+function displayPokemon(pokemon){
+    const types = pokemon.types
+    .map(type => type.type.name)
+    .join(", ");
+}
