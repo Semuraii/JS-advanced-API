@@ -29,5 +29,16 @@ button {
     background: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0.2);
-    padding:
+    padding: 20px;
+}
+
+#pokemonContainer img {
+    width: 180px;
+}
+
+#pokemonList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    gap: 15px;
+    margin: 30px;
 }
