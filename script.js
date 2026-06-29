@@ -26,7 +26,7 @@ async function getPokemon(name){
     try{
         const response = await fetch(`${BASE_URL}/pokemon/${name}`);
         if(!response.ok){
-            throw new WebTransportError("Pokemon not found");
+            throw new Error("Pokemon not found");
         }
         const data = await response.json();
         displayPokemon(data);
