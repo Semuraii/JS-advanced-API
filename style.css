@@ -33,6 +33,10 @@ input {
     outline: none;
 }
 
+input:focus {
+    border-color: #ffcb05;
+}
+
 button {
     padding: 10px 20px;
     cursor: pointer;
