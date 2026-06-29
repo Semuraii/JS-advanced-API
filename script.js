@@ -47,5 +47,28 @@ function displayPokemon(pokemon){
     pokemonContainer.innerHTML = `
     <h2>${pokemon.name.toUpperCase()}</h2>
     <img src="${pokemon.sprites.front_default}">
-    `
+    <p><strong>ID:</strong> ${pokemon.id}</p>
+    <p><strong>Height:</strong> ${pokemon.height}</p>
+    <p><strong>Weight:</strong> ${pokemon.weight}</p>
+    <p><strong>Types:</strong> ${pokemon.types}</p>
+    `;
 }
+
+// Load first 151 Pokemon
+async function loadPokemon(){
+    const response = await fetch(`${BASE_URL}/pokemon?limit=151`);
+    const data = await response.json();
+    pokemonList.innerHTML="";
+    data.results.forEach(async pokemon=>{
+        const response = await fetch(pokemon.url);
+        const details = await response.json();
+        pokemonList.innerHTML += `
+        <div class="card" onclick="getPokemon('${details.name}')">
+        <img src="${details.sprites.front_default}">
+        <h3>${details.name}</h3>
+        </div>
+        `;
+    });
+}
+
+loadPokemon();
