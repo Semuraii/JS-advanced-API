@@ -17,3 +17,8 @@ input {
     padding: 10px;
     width: 250px;
 }
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
