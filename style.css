@@ -98,5 +98,6 @@ button:hover {
 }
 
 .card img {
-    width: 100px;
+    width: 120px;
+    transition: 0.3s;
 }
