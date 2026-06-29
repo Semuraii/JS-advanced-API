@@ -43,4 +43,8 @@ function displayPokemon(pokemon){
     const types = pokemon.types
     .map(type => type.type.name)
     .join(", ");
+
+    pokemonContainer.innerHTML = `
+    <h2>${pokemon.name.toUpperCase()}</h2>
+    `
 }
