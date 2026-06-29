@@ -71,6 +71,11 @@ button:hover {
     transform: scale(1.15);
 }
 
+#pokemonContainer p {
+    font-size: 1rem;
+    margin: 8px 0;
+}
+
 #pokemonList {
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
