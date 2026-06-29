@@ -20,3 +20,20 @@ searchInput.addEventListener("kreypress",(event)=>{
         searchBtn.click();
     }
 });
+
+// Fetch one Pokemon
+async function getPokemon(name){
+    try{
+        const response = await fetch(`${BASE_URL}/pokemon/${name}`);
+        if(!response.ok){
+            throw new WebTransportError("Pokemon not found");
+        }
+        const data = await response.json();
+        displayPokemon(data);
+    }
+    catch(error){
+        pokemonContainer.innerHTML = `
+        <h2>${error.message}</h2>
+        `;
+    } 
+}
