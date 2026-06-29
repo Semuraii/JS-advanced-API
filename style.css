@@ -42,3 +42,11 @@ button {
     gap: 15px;
     margin: 30px;
 }
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
