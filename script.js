@@ -41,8 +41,8 @@ async function getPokemon(name){
 // Display selected Pokemon
 function displayPokemon(pokemon){
     const types = pokemon.types
-    .map(type => type.type.name)
-    .join(", ");
+    .map(type => `<span class="type ${type.type.name}</span>`)
+    .join(" ");
 
     pokemonContainer.innerHTML = `
     <h2>${pokemon.name.toUpperCase()}</h2>
