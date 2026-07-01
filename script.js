@@ -62,11 +62,11 @@ function displayPokemon(pokemon) {
   const name =
   pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
 
-  const types = pokemon.types.map(=>
+  const types = pokemon.types.map(type =>
     `<span class="type ${type.type.name}">${type.type.name}</span>`
   ).join("");
 
-  const abilities = pokemon.abilities.map(abilities =>
+  const abilities = pokemon.abilities.map(ability =>
     ability.ability.name)
     .join(", ")
   ;
@@ -79,23 +79,45 @@ function displayPokemon(pokemon) {
     value="${stat.base_stat}" max="255"></progress>`)
     .join("");
 
+    const mainType = pokemon.types[0].type.name;
+    pokemonContainer.className = mainType;
+
+    pokemonContainer.innerHTML = `
+    <h2>${name}</h2>
+    <img
+    src="${pokemon.sprites.other["official-artwork"].front_default}"
+    alt="${pokemon.name}">
+
+    <p><strong>ID:</strong> ${pokemon.id}</p>
+    <p><strong>Height:</strong> ${pokemon.height}</p>
+    <p><strong>Weight:</strong> ${pokemon.weight}</p>
+    <p><strong>Abilities:</strong> ${abilities}</p>
+    <p><strong>Types:</strong></p>
+    ${types}
+    <h3>Stats</h3>
+    ${stats}
+    `;
+}
+
 // Load first 151 Pokemon
 async function loadPokemon() {
     const response = await fetch(`${BASE_URL}/pokemon?limit=151`);
     const data = await response.json();
     pokemonList.innerHTML="";
     
-    data.results.forEach(async pokemon=> {
-        const response = await fetch(pokemon.url);
-        const details = await response.json();
-        
-        pokemonList.innerHTML += `
-        <div class="card" onclick="getPokemon('${details.name}')">
-        <img src="${details.sprites.other["official-artwork"].front_default}" alt="${details.name}">
-        <h3>${details.name}</h3>
-        </div>
-        `;
-    });
+   for (const pokemon of data.results) {
+    const response = await fetch(pokemon.url);
+    const details = await response.json();
+    pokemonList.innerHTML += `
+    <div
+    class="card" onclick="getPokemon('${details.name}')">
+    <img
+    src="${details.sprites.other["official-artwork"].front_default}"
+    alt="${details.name}">
+    <h3>${details.name}</h3>
+    </div>
+    `;
+   }
 }
 
 loadPokemon();
