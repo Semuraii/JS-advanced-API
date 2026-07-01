@@ -132,6 +132,8 @@ button:hover {
     font-weight: bold;
     margin: 5px;
     text-transform: capitalize;
+    margin-right: 8px;
+    margin-bottom: 8px;
 }
 
 .grass {
