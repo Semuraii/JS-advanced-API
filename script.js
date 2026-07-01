@@ -41,12 +41,12 @@ async function getPokemon(name){
 // Display selected Pokemon
 function displayPokemon(pokemon){
     const types = pokemon.types
-    .map(type => `<span class="type ${type.type.name}</span>`)
-    .join(" ");
+    .map(type => `<span class="type ${type.type.name}">${type.type.name}</span>`)
+    .join("");
 
     pokemonContainer.innerHTML = `
     <h2>${pokemon.name.toUpperCase()}</h2>
-    <img src="${pokemon.sprites.front_default}">
+    <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
     <p><strong>ID:</strong> ${pokemon.id}</p>
     <p><strong>Height:</strong> ${pokemon.height}</p>
     <p><strong>Weight:</strong> ${pokemon.weight}</p>
@@ -66,7 +66,7 @@ async function loadPokemon() {
         
         pokemonList.innerHTML += `
         <div class="card" onclick="getPokemon('${details.name}')">
-        <img src="${details.sprites.front_default}">
+        <img src="${details.sprites.other["official-artwork"].front_default}" alt="${details.name}">
         <h3>${details.name}</h3>
         </div>
         `;
