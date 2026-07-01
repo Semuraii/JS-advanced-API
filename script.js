@@ -26,6 +26,7 @@ randomBtn.addEventListener("click", () => {
 // Reset button
 resetBtn.addEventListener("click", () => {
     searchInput.value = "";
+    typeSelect.value = "";
     pokemonContainer.innerHTML = "";
     loadPokemon();
 });
