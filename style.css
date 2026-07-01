@@ -116,6 +116,10 @@ button:hover {
 
 .card img {
     transition: 0.3s;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: 0.3s;
 }
 
 .card:hover img {
