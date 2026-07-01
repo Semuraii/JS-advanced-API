@@ -38,6 +38,7 @@ input {
 
 input:focus {
     border-color: #ffcb05;
+    box-shadow: 0 0 10px rgba(42,117,187,0.35);
 }
 
 button {
