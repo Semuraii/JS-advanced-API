@@ -3,7 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #f4f4f4, #dce8f5);
+    background: linear-gradient( 135deg,#dff6dd,#9fd8a5,#7cbf74);
     min-height: 100vh;
     text-align: center;
     align-items: center;
