@@ -69,6 +69,34 @@ button:hover {
     transition: 0.3s;
 }
 
+#pokemonContainer.grass {
+    background: #d8f5d0;
+}
+
+#pokemonContainer.fire {
+    background: #ffe0d0;
+}
+
+#pokemonContainer.water {
+    background: #d9ebff;
+}
+
+#pokemonContainer.electric {
+    background: #fff6b5;
+}
+
+#pokemonContainer.poison {
+    background: #ecd8ff;
+}
+
+#pokemonContainer.bug {
+    background: #eef7d4;
+}
+
+#pokemonContainer.normal {
+    background: #f5f5dc;
+}
+
 #pokemonContainer img {
     width: 220px;
     transition: transform 0.3s;
