@@ -71,6 +71,14 @@ function displayPokemon(pokemon) {
     .join(", ")
   ;
 
+  const stats = pokemon.stats.map(stat => `
+    <p>
+    <strong>${stat.stat.name}</strong>
+    </p>
+    <progress
+    value="${stat.base_stat}" max="255"></progress>`)
+    .join("");
+
 // Load first 151 Pokemon
 async function loadPokemon() {
     const response = await fetch(`${BASE_URL}/pokemon?limit=151`);
