@@ -139,5 +139,26 @@ typeSelect.addEventListener("change", () => {
     }
 });
 
+async function loadType(type) {
+    pokemonList.innerHTML = "";
+    const response = await fetch(`${BASE_URL}/type/${type}`);
+    const data = await response.json();
+    for (const pokemon of data.pokemon) {
+        const response = await fetch(pokemon.pokemon.url);
+        const details = await response.json();
+        if (details.id <= 151) {
+            pokemonList.innerHTML += `
+            <div
+            class="card" onclick="getPokemon('${details.name}')">
+            <img
+            src="${details.sprites.other["official-artwork"].front_default}"
+            alt="${details.name}">
+            <h3>${details.name.charAt(0).toUpperCase() + details.name.slice(1)}</h3>
+            </div>
+            `;
+        }
+    }
+}
+
 loadPokemon();
 loadTypes();
