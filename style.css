@@ -70,7 +70,7 @@ button:hover {
 }
 
 #pokemonContainer img {
-    width: 180px;
+    width: 220px;
     transition: transform 0.3s;
 }
 
