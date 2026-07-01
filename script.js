@@ -13,14 +13,14 @@ searchBtn.addEventListener("click", () => {
     const pokemon = searchInput.value.toLowerCase().trim();
 
     if(pokemon !==""){
-        getPokemon(pokemon);
+        showPokemon(pokemon);
     }
 });
 
 // Random button
 randomBtn.addEventListener("click", () => {
     const randomId = Math.floor(Math.random() * 151) + 1;
-    getPokemon(randomId);
+    showPokemon(randomId);
 });
 
 // Reset button
@@ -59,7 +59,7 @@ async function getPokemon(name){
 }
 
 //fetch the pokemon and scroll to the top of the page
-async function getPokemonAndScroll(name) {
+async function showPokemon(name) {
     await getPokemon(name);
     pokemonContainer.scrollIntoView({ behavior: "smooth", block: "start" 
     });
@@ -97,8 +97,8 @@ function displayPokemon(pokemon) {
     alt="${pokemon.name}">
 
     <p><strong>ID:</strong> ${pokemon.id}</p>
-    <p><strong>Height:</strong> ${pokemon.height}</p>
-    <p><strong>Weight:</strong> ${pokemon.weight}</p>
+    <p><strong>Height:</strong> ${pokemon.height / 10} m</p>
+    <p><strong>Weight:</strong> ${pokemon.weight / 10} kg</p>
     <p><strong>Abilities:</strong> ${abilities}</p>
     <p><strong>Types:</strong></p>
     ${types}
@@ -122,7 +122,7 @@ async function loadPokemon() {
     <img
     src="${details.sprites.other["official-artwork"].front_default}"
     alt="${details.name}">
-    <h3>${details.name}</h3>
+    <h3>${details.name.charAt(0).toUpperCase() + details.name.slice(1)}</h3>
     </div>
     `;
    }
