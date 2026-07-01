@@ -121,4 +121,15 @@ async function loadPokemon() {
    }
 }
 
+async function loadTypes() {
+    const response = await fetch(`${BASE_URL}/type`);
+    const data = await response.json();
+    data.results.forEach(type => {
+        if (type.name !== "unknown" && type.name !== "shadow") {
+            typeSelect.innerHTML += `<option value="${type.name}">${type.name}</option>`;
+        }
+    });
+}
+
 loadPokemon();
+loadTypes();
