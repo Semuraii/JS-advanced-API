@@ -97,6 +97,11 @@ button:hover {
     overflow: hidden;
 }
 
+.card small {
+    color: gray;
+    font-size: 0.85rem;
+}
+
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 18px 35px rgba(0,0,0,0.22);
