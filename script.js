@@ -131,5 +131,13 @@ async function loadTypes() {
     });
 }
 
+typeSelect.addEventListener("change", () => {
+    if (typeSelect.value === "") {
+        loadPokemon();
+    } else {
+        loadType(typeSelect.value);
+    }
+});
+
 loadPokemon();
 loadTypes();
