@@ -58,6 +58,13 @@ async function getPokemon(name){
     } 
 }
 
+//fetch the pokemon and scroll to the top of the page
+async function getPokemonAndScroll(name) {
+    await getPokemon(name);
+    pokemonContainer.scrollIntoView({ behavior: "smooth", block: "start" 
+    });
+}
+
 // Display selected Pokemon
 function displayPokemon(pokemon) {
   const name =
