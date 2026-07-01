@@ -4,6 +4,7 @@ const searchBtn = document.getElementById("searchBtn");
 const searchInput = document.getElementById("searchInput");
 const randomBtn = document.getElementById("randomBtn");
 const resetBtn = document.getElementById("resetBtn");
+const typeSelect = document.getElementById("typeSelect");
 
 const BASE_URL = "https://pokeapi.co/api/v2";
 
