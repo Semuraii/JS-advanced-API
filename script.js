@@ -27,6 +27,7 @@ randomBtn.addEventListener("click", () => {
 resetBtn.addEventListener("click", () => {
     searchInput.value = "";
     pokemonContainer.innerHTML = "";
+    loadPokemon();
 });
 
 //Press Enter
@@ -38,6 +39,9 @@ searchInput.addEventListener("keydown",(event)=>{
 
 // Fetch one Pokemon
 async function getPokemon(name){
+
+    pokemonContainer.innerHTML = `<div class="loader"></div>`;
+
     try{
         const response = await fetch(`${BASE_URL}/pokemon/${name}`);
         if(!response.ok){
@@ -54,20 +58,18 @@ async function getPokemon(name){
 }
 
 // Display selected Pokemon
-function displayPokemon(pokemon){
-    const types = pokemon.types
-    .map(type => `<span class="type ${type.type.name}">${type.type.name}</span>`)
-    .join("");
+function displayPokemon(pokemon) {
+  const name =
+  pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
 
-    pokemonContainer.innerHTML = `
-    <h2>${pokemon.name.toUpperCase()}</h2>
-    <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
-    <p><strong>ID:</strong> ${pokemon.id}</p>
-    <p><strong>Height:</strong> ${pokemon.height}</p>
-    <p><strong>Weight:</strong> ${pokemon.weight}</p>
-    <p><strong>Types:</strong> ${types}</p>
-    `;
-}
+  const types = pokemon.types.map(=>
+    `<span class="type ${type.type.name}">${type.type.name}</span>`
+  ).join("");
+
+  const abilities = pokemon.abilities.map(abilities =>
+    ability.ability.name)
+    .join(", ")
+  ;
 
 // Load first 151 Pokemon
 async function loadPokemon() {
