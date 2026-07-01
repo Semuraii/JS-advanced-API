@@ -120,3 +120,77 @@ button:hover {
     margin: 5px;
     text-transform: capitalize;
 }
+
+.grass {
+    background: #78C850;
+}
+
+.fire {
+    background: #F08030;
+}
+
+.water {
+    background: #6890F0;
+}
+
+.electric {
+    background: #F8D030;
+}
+
+.poison {
+    background: #A040A0;
+}
+
+.flying {
+    background: #A890F0;
+}
+
+.bug {
+    background: #A8B820;
+}
+
+.normal {
+    background: #A8A878;
+}
+
+.ground {
+    background: #E0C068;
+    color: black;
+}
+
+.rock {
+    background: #B8A038;
+}
+
+.fairy {
+    background: #EE99AC;
+}
+
+.psychic {
+    background: #F85888;
+}
+
+.fighting {
+    background: #C03028;
+}
+
+.ice {
+    background: #98D8D8;
+}
+
+.dragon {
+    background: #7038F8;
+}
+
+.ghost {
+    background: #705898;
+}
+
+.dark {
+    background: #705848;
+}
+
+.steel {
+    background: #B8B8D0;
+    color: black;
+}
