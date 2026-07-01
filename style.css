@@ -100,6 +100,7 @@ button:hover {
     cursor: pointer;
     transition: 0.3s;
     overflow: hidden;
+    border: 3px solid transparent;
 }
 
 .card small {
