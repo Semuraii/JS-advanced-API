@@ -118,7 +118,7 @@ async function loadPokemon() {
     const details = await response.json();
     pokemonList.innerHTML += `
     <div
-    class="card" onclick="getPokemon('${details.name}')">
+    class="card" onclick="showPokemon('${details.name}')">
     <img
     src="${details.sprites.other["official-artwork"].front_default}"
     alt="${details.name}">
@@ -156,7 +156,7 @@ async function loadType(type) {
         if (details.id <= 151) {
             pokemonList.innerHTML += `
             <div
-            class="card" onclick="getPokemon('${details.name}')">
+            class="card" onclick="showPokemon('${details.name}')">
             <img
             src="${details.sprites.other["official-artwork"].front_default}"
             alt="${details.name}">
