@@ -61,11 +61,12 @@ button:hover {
 
 #pokemonContainer {
     margin: 30px auto;
-    width: 300px;
+    width: 380px;
     background: white;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    padding: 20px;
+    padding: 30px;
+    transition: 0.3s;
 }
 
 #pokemonContainer img {
