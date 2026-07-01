@@ -83,6 +83,8 @@ button:hover {
     grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
     gap: 20px;
     padding: 30px;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .card {
