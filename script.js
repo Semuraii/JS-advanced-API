@@ -16,6 +16,18 @@ searchBtn.addEventListener("click", () => {
     }
 });
 
+// Random button
+randomBtn.addEventListener("click", () => {
+    const randomId = Math.floor(Math.random() * 151) + 1;
+    getPokemon(randomId);
+});
+
+// Reset button
+resetBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    pokemonContainer.innerHTML = "";
+});
+
 //Press Enter
 searchInput.addEventListener("keydown",(event)=>{
     if(event.key === "Enter"){
